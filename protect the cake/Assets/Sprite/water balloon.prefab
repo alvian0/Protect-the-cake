@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3384963669146872386}
   m_Layer: 0
   m_Name: water balloon
-  m_TagString: Untagged
+  m_TagString: Junk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

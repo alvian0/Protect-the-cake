@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,34 +10,41 @@ public class GameManager : MonoBehaviour
     public GameObject candleLight, efek;
     public Transform efekPlay;
     public bool IsFireOn = false;
-    public float FireTime = 10f, GameOverCoutdown = 3f;
+    public float FireTime = 10f, GameOverCoutdown = 1f;
     public GameObject[] Hpbar;
     public Color notActive;
     public SpriteRenderer cake;
-    public Sprite CakeNormal, CakeDemage;
-    public GameObject NotStart, HitEffect, cameras, Spawner;
-    public Image PartyStartCounter;
+    public GameObject NotStart, HitEffect, cameras, Spawner, PausePanel, GameOverPanel, GameOverCounterImage, Cake;
+    public Image PartyStartCounter, GameOverCounter;
     public float boomerangTimeInterval = 5f;
     public GameObject[] Boomerang;
+    public Text Rank;
+    public bool GameFinished = false;
 
     float fireRate;
     bool GameStart = false;
     bool IsPaused = false, OnGOcountdown = false;
-    float GOcountdown, boomerangrate;
+    float boomerangrate;
 
     void Start()
     {
+        Time.timeScale = 1f;
+
         boomerangrate = boomerangTimeInterval;
-        GOcountdown = GameOverCoutdown;
-        cake.sprite = CakeNormal;
+        GameOverCounter.fillAmount = GameOverCoutdown;
         fireRate = FireTime;
     }
 
     void Update()
     {
-        if (GameStart)
+        if (GameStart && !GameFinished)
         {
             PartyStartCounter.fillAmount -= Time.deltaTime / 60;
+
+            if (PartyStartCounter.fillAmount <= 0)
+            {
+                GameFinished = true;
+            }
 
             NotStart.SetActive(false);
 
@@ -60,12 +68,14 @@ public class GameManager : MonoBehaviour
 
             if (IsFireOn)
             {
+                GameOverCounterImage.SetActive(false);
+
                 if (fireRate <= 0)
                 {
                     candleLight.SetActive(false);
                     fireRate = FireTime;
                     Instantiate(efek, efekPlay.position, Quaternion.identity);
-                    GOcountdown = GameOverCoutdown;
+                    GameOverCounter.fillAmount = GameOverCoutdown;
                     OnGOcountdown = true;
                     IsFireOn = false;
                 }
@@ -78,15 +88,22 @@ public class GameManager : MonoBehaviour
 
             if (OnGOcountdown)
             {
-                if (GOcountdown <= 0)
-                {
+                GameOverCounterImage.SetActive(true);
 
+                if (GameOverCounter.fillAmount <= 0)
+                {
+                    GameFinished = true;
+                }
+
+                else
+                {
+                    GameOverCounter.fillAmount -= Time.deltaTime / 4;
                 }
             }
 
-            if (Hp <= 2)
+            if (Hp <= 0)
             {
-                cake.sprite = CakeDemage;
+                GameFinished = true;
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -100,6 +117,54 @@ public class GameManager : MonoBehaviour
                 {
                     Paused();
                 }    
+            }
+        }
+
+        if (GameFinished)
+        {
+            GameOverPanel.SetActive(true);
+            Destroy(GameObject.FindGameObjectWithTag("Junk"));
+            Spawner.SetActive(false);
+
+            if (PartyStartCounter.fillAmount <= 0)
+            {
+                if (candleLight.activeSelf)
+                {
+                    if (Hp == 3)
+                    {
+                        Rank.text = "the party started\nYour rank : S";
+                    }
+
+                    else if (Hp == 2)
+                    {
+                        Rank.text = "the party started\nYour rank : A";
+                    }
+
+                    else if (Hp == 1)
+                    {
+                        Rank.text = "the party started\nYour rank : B";
+                    }
+
+                    else
+                    {
+                        Rank.text = "the party started\nYour rank : C";
+                    }
+                }
+
+                else
+                {
+                    Rank.text = "the party not started you need burning candle to start party\nYour rank : F";
+                }
+            }
+
+            else if (GameOverCounter.fillAmount <= 0)
+            {
+                Rank.text = "the party not started you need burning candle to start party\nYour rank : F";
+            }
+
+            else
+            {
+                Rank.text = "You failed protect your cake\nYour rank : F";
             }
         }
     }
@@ -117,12 +182,15 @@ public class GameManager : MonoBehaviour
             HealthDecrease();
             candleLight.SetActive(false);
             IsFireOn = false;
+            OnGOcountdown = true;
         }
 
         else
         {
             candleLight.SetActive(true);
             IsFireOn = true;
+            OnGOcountdown = false;
+            GameOverCounter.fillAmount = GameOverCoutdown;
             fireRate = FireTime;
 
             if (!GameStart)
@@ -138,6 +206,7 @@ public class GameManager : MonoBehaviour
         HealthDecrease();
         candleLight.SetActive(false);
         IsFireOn = false;
+        OnGOcountdown = true;
     }
 
     public void HealthDecrease()
@@ -147,6 +216,7 @@ public class GameManager : MonoBehaviour
             Hp--;
             HitEffect.SetActive(false);
             HitEffect.SetActive(true);
+            Cake.GetComponent<Animator>().SetTrigger("Demage");
             cameras.GetComponent<Animator>().SetTrigger("Shake");
 
             for (int i = Hpbar.Length; i > Hp; i--)
@@ -160,11 +230,18 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         IsPaused = true;
+        PausePanel.SetActive(true);
     }
 
     public void UnPaused()
     {
         Time.timeScale = 1f;
         IsPaused = false;
+        PausePanel.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

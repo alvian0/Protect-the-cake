@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4835422765935741770}
   m_Layer: 0
   m_Name: paper Plane
-  m_TagString: Untagged
+  m_TagString: Junk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
