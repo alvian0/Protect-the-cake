@@ -8,12 +8,9 @@ public class HandCotrol : MonoBehaviour
     public Transform[] handpos;
     public GameObject Handleft, HandRight;
 
-    Vector3 leftoriginalpos, rightoriginalpos;
-
     void Start()
     {
-        leftoriginalpos = Handleft.transform.position;
-        rightoriginalpos = HandRight.transform.position;
+        
     }
 
     void Update()
