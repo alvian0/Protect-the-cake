@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 8a3798facc57b6f4cab1e8049dcd62a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7159477040948852827
+    second: HandType_0
+  - first:
+      213: -7551756159998890605
+    second: HandType_1
+  - first:
+      213: -827630832228569336
+    second: HandType_2
+  - first:
+      213: -6693247283713588212
+    second: HandType_3
+  - first:
+      213: 7894257522905592949
+    second: HandType_4
+  - first:
+      213: -8130700755557386155
+    second: HandType_5
+  - first:
+      213: -2068162142696168570
+    second: HandType_6
+  - first:
+      213: 2665117543005177115
+    second: HandType_7
+  - first:
+      213: 5171124888827130676
+    second: HandType_8
+  - first:
+      213: 94924544797601366
+    second: HandType_9
+  - first:
+      213: -3495527395173297667
+    second: HandType_10
+  - first:
+      213: 4981730189229511671
+    second: HandType_11
+  - first:
+      213: 5243962008100510375
+    second: HandType_12
+  - first:
+      213: 2421714695566482753
+    second: HandType_13
+  - first:
+      213: 3579592083780116415
+    second: HandType_14
+  - first:
+      213: -5574851588014840079
+    second: HandType_15
+  - first:
+      213: 50468389779722958
+    second: HandType_16
+  - first:
+      213: -2234088283384731137
+    second: HandType_17
+  - first:
+      213: 4782879039421183754
+    second: HandType_18
+  - first:
+      213: 1247328643550057216
+    second: HandType_19
+  - first:
+      213: 5037103859827488988
+    second: HandType_20
+  - first:
+      213: -1611408054534290473
+    second: HandType_21
+  - first:
+      213: -209345467533326906
+    second: HandType_22
+  - first:
+      213: 809250701305969338
+    second: HandType_23
+  - first:
+      213: -3272750087771082681
+    second: HandType_24
+  - first:
+      213: -8700377418069769567
+    second: HandType_25
+  - first:
+      213: 7799115218755575195
+    second: HandType_26
+  - first:
+      213: -7804484721883848692
+    second: HandType_27
+  - first:
+      213: 2196336881983878347
+    second: HandType_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HandType_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2000
+        height: 1622
+      alignment: 9
+      pivot: {x: 0.17106201, y: 0.4652347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7cda4509d64ac90800000000000000
+      internalID: -7159477040948852827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandType_22
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 136
+        width: 1906
+        height: 1790
+      alignment: 9
+      pivot: {x: 0.16566594, y: 0.46472055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5865c0861481df0800000000000000
+      internalID: -209345467533326906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

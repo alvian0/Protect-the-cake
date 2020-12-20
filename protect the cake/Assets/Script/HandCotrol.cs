@@ -18,65 +18,24 @@ public class HandCotrol : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetButtonDown("left"))
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                MoveHand(Handleft.transform, 0);
-            }
-
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                MoveHand(Handleft.transform, 2);
-            }
-
-            else
-            {
-                MoveHand(Handleft.transform, 1);
-            }
+            Handleft.GetComponent<Animator>().SetTrigger("left");
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetButtonDown("up"))
         {
-            Handleft.transform.position = leftoriginalpos;
+            Handleft.GetComponent<Animator>().SetTrigger("Up");
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetButtonDown("right"))
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                MoveHand(HandRight.transform, 0, true);
-            }
-
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                MoveHand(HandRight.transform, 2, true);
-            }
-
-            else
-            {
-                MoveHand(HandRight.transform, 1, true);
-            }
+            HandRight.GetComponent<Animator>().SetTrigger("Right");
         }
 
-        if (Input.GetKeyUp(KeyCode.RightArrow))
+        if (Input.GetButtonDown("down"))
         {
-            HandRight.transform.position = rightoriginalpos;
-        }
-    }
-
-    void MoveHand(Transform hand, int index, bool right = false)
-    {
-        if (right)
-        {
-            hand.transform.position = Vector2.MoveTowards(hand.transform.localPosition, 
-                new Vector2(-handpos[index].position.x, handpos[index].position.y), 
-                Speed * Time.deltaTime);
-        }
-
-        else
-        {
-            hand.transform.position = Vector2.MoveTowards(hand.transform.localPosition, handpos[index].position, Speed * Time.deltaTime);
+            HandRight.GetComponent<Animator>().SetTrigger("flint");
         }
     }
 }
